@@ -39,7 +39,7 @@
 First, clone the project:
 
 ```bash
-$ git clone git@bitbucket.org:naderchehab/coin-board.git
+$ git remote add origin git@github.com:naderchehab/coin-board.git
 $ cd coin-board
 ```
 

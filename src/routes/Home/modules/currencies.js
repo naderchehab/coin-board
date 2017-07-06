@@ -14,13 +14,18 @@ export const CURRENCIES_GET = 'CURRENCIES_GET'
 export const getCurrencies = () => {
   return (dispatch, getState) => {
     return new Promise((resolve) => {
-        dispatch({
-          type    : CURRENCIES_GET,
-          payload : [1, 2, 3]
+      fetch('https://api.coinmarketcap.com/v1/ticker/')
+      .then(response => response.json())
+      .then(response =>  {
+        //console.log(response);
+            dispatch({
+              type: CURRENCIES_GET,
+              payload: response
+            });
+            resolve();
         });
-        resolve();
-    })
-  }
+      });
+  };
 }
 
 export const actions = {

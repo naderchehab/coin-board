@@ -12,7 +12,11 @@ class HomeView extends React.Component {
     <div>
       <table>
         <tbody>
-          {this.props.currencies.currencies.map(symbol => <tr key={symbol}><td>{symbol}</td></tr>)}
+          {this.props.currencies.currencies.map(currency => <tr key={currency.id}>
+            <td>{currency.name}</td>
+            <td>{currency.symbol}</td>
+            <td>{currency.price_usd}</td>
+          </tr>)}
         </tbody>
       </table>
     </div>
